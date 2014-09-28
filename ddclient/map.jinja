@@ -1,0 +1,19 @@
+{% set ddclient = salt['grains.filter_by']({
+  'Ubuntu': {
+    'pkg': 'ddclient',
+    'service':'ddclient',
+  },
+  'Debian': {
+    'pkg': 'ddclient',
+    'service':'ddclient',
+  },
+  'CentOS': {
+    'pkg': 'ddclient',
+    'service':'ddclient',
+  },
+  'RedHat': {
+    'pkg': 'ddclient',
+    'service':'ddclient',
+  },
+
+}, merge=salt['pillar.get']('ddclient:lookup')) %}
